@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Berik Bazarov</title>
+    <link href="https://fonts.googleapis.com/css?family=Cutive+Mono&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <img src="https://galamtor.h1n.ru/berik.jpeg" alt="Berik" align="left">
+        <h1 id="name">Berik Bazarov</h1>
+        <h1>You can contact me via:</h1>
+        <ul>
+            <li><strong>Mobile Phone:</strong> +7 708 501 01 95</li>
+            <li><strong>Email:</strong> berikbazar@yandex.com</li>
+            <li><strong>Telegram:</strong> @alanapapa</li>
+        </ul>
+    </header>
+    <section>
+        <h1>Summary</h1>
+        <blockquote>
+            Hello. I make site layouts. Always ready to learn something new and interesting. At the moment, I received a
+            grant
+            from the 01 alem programming school and am learning the Go programming language. I will be happy to work
+            with
+            open,
+            responsible and helpful people who love their work.
+        </blockquote>
+
+        <h1>Skills</h1>
+        <p>Go, HTML/CSS, Bootstrap, CMS Wordpess.</p>
+
+        <h1>Code example (LATEST)</h1>
+        <p>
+            <pre>
+// code for ascii art in Golang
+package main
+
+import (
+    "bufio"
+    "fmt"
+    "os"
+    "strings"
+)
+
+func main() {
+    file, _ := os.Open("standard.txt")
+    fileVal := ScanFile(file)
+    arg := os.Args[1]
+    for _, v := range os.Args[2:] {
+        arg += " " + v
+    }
+    narg := strings.Split(arg, "\\n")
+    for _, v := range narg {
+        printLetter(string(v), fileVal)
+    }
+}
+
+func printLetter(s string, fileVal []string) {
+    for i := 1; i <= 8; i++ {
+        for _, arg := range s {
+            indexBase := int(rune(arg)-32) * 9
+            fmt.Print(fileVal[indexBase+i])
+        }
+        fmt.Println()
+    }
+}
+
+func ScanFile(arg *os.File) []string {
+    var fileValue []string
+    scanner := bufio.NewScanner(arg)
+    for scanner.Scan() {
+        lines := scanner.Text()
+        fileValue = append(fileValue, lines)
+    }
+    return fileValue
+}
+</pre>
+        </p>
+
+
+        <h1>Experience</h1>
+        <p id="xp">
+            <a href="https://github.com/alanapapa" target="_blank"><img
+                    src="http://pngimg.com/uploads/github/github_PNG37.png" alt="github"></a>
+            <a href="https://www.codecademy.com/profiles/berikBazarov1552389791" target="_blank"><img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Codecademy.svg/1280px-Codecademy.svg.png"
+                    alt="codecademy"></a></p>
+
+
+        <h1>Education:</h1>
+        <ul>
+            <li>College <strong>«Kazakh Academy of Transport and Communication»</strong>, Logistician
+            </li>
+            <li>Coding school <strong>«01 alem»</strong>, Golang developer</li>
+        </ul>
+
+        <h1>English level: A2</h1>
+        <p>Currently studying with a native speaker.</p>
+    </section>
+    <footer>
+        <p>&copy;2020 <a href="https://github.com/alanapapa" target="_blank">alanapapa</a></p>
+    </footer>
+</body>
+
+</html>
